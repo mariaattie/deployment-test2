@@ -247,7 +247,25 @@ export default function p5Example(props) {
     p5.textFont("Georgia");
   };
 
-  const mousePressed = (p5) => {};
+  const mousePressed = (p5) => {
+    val = val + 1;
+
+    if (val % 2 != 0) {
+        p5.noLoop();
+    } else {
+        p5.loop();
+    }; 
+};
+
+const touchStarted = (p5) => {
+    val = val + 1;
+
+    if (val % 2 != 0) {
+       p5.noLoop();
+    } else {
+        p5.loop();
+    };     
+};
 
   return <Sketch setup={setup} draw={draw} mousePressed={mousePressed} />;
 }
